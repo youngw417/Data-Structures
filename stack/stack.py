@@ -85,15 +85,6 @@ class Stack:
             self.head = newNode
             self.size += 1
 
-        #     self.head = newNode
-        # else: 
-        #     current = self.head
-        #     self.size = 1
-        #     while curent.next is not None:
-        #         curent = current.next
-        #         self.size += 1
-        #     current.next = newNode
-
     def pop(self):
 
         if self.is_empty():
@@ -103,17 +94,5 @@ class Stack:
         self.size -= 1
         return top.value
 
-        
-        # if not self.head:
-        #     return None
-        # else: 
-        #     current = self.head
-        #     self.size = 1
-        #     while curent.next is not None:
-        #         curent = current.next
-        #         self.size += 1
-        #     popped = current
-        #     current = None
-
-        # return popped
+      
         

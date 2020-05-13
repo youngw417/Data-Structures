@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, value=None, next = None):
         self.value = value
@@ -74,8 +73,9 @@ class LinkedList:
         
         if self.is_empty():
             return None
+        print('myhead', self.head)
         value = self.head.value
-        print('self.head', self.head)
+    
         self.head = self.head.next
         return value
 
@@ -88,19 +88,12 @@ class LinkedList:
             print('no value in this linked list')
         else:
             current = self.head
-            
             while current:
-          
                 print(current.value)
                 current = current.next
-                
-        
-# ll = LinkedList()
-# ll.add_to_head(3)
-# ll.add_to_head(4)
-# print(ll.remove_head())
-# print(ll.remove_head())
 
+# ll = LinkedList()
+# ll.add_to_head(5)
+# ll.add_to_head(7)
 # print(ll.remove_head())
 # print(ll.remove_head())
-# print(ll.print_ll_elements())
