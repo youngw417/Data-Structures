@@ -74,6 +74,12 @@ class LinkedList:
         if self.is_empty():
             return None
         
+        if self.head == self.tail:
+            popped = self.head.value
+            self.head = None
+            self.tail = None
+            return popped
+            
         value = self.head.value
         print('value', value)
         self.head = self.head.next
