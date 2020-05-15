@@ -32,6 +32,8 @@ Stretch: What if you could only use instances of your Stack class to implement t
 #             return None
 #         return self.storage.pop()
 
+from linkedlist import LinkedList
+
 class Node:
     def __init__(self, value = None, next = None):
         self.value = value
@@ -42,28 +44,26 @@ class Node:
 class Queue:
     def __init__(self):
         self.size = 0
-        self.head = Node()
+        self.storage = LinkedList()
     
     def __len__(self):
         return self.size
 
     def enqueue(self, value):
-        newNode = Node(value)
-        if len(self) == 0:
-            self.head = newNode
-            self.size = 1
-        else:
-            current = self.head
-            for i in range(2, self.size + 1):
-                current = current.next
-            current.next = newNode
-            self.size += 1
+        self.size += 1
+        self.storage.add_to_tail(value)
 
     def dequeue(self):
-        if len(self) == 0:
-            return None
-        
-        top = self.head
-        self.head = self.head.next
         self.size -= 1
-        return top.value
+        return self.storage.remove_head()
+
+
+ll = Queue()
+ll.enqueue(10)
+ll.enqueue(15)
+ll.enqueue(20)
+print(len(ll))
+print(ll.dequeue())
+print(ll.dequeue())
+print(ll.dequeue())
+print(len(ll))
